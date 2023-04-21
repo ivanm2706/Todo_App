@@ -1,11 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.scss';
+import { HashRouter } from 'react-router-dom';
 import { App } from './App';
 
+import './styles/index.css';
+import './styles/todo-list.css';
+import './styles/filters.css';
+
 ReactDOM.render(
-  <React.StrictMode>
+  <HashRouter>
     <App />
-  </React.StrictMode>,
+  </HashRouter>,
   document.getElementById('root'),
 );
