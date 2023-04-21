@@ -34,15 +34,15 @@ export const Header: React.FC<Props> = ({
   };
 
   return (
-    <header className="header">
-      <h1>todos</h1>
+    <header>
+      <h1 className="todoapp__title">todos</h1>
 
       <form onSubmit={hendlerForm}>
         <input
           ref={input}
           type="text"
           data-cy="createTodo"
-          className="new-todo"
+          className="input input--newTodo"
           placeholder="What needs to be done?"
           value={value}
           onChange={hendlerInput}

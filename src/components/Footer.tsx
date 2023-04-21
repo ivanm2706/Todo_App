@@ -36,17 +36,19 @@ export const Footer: FC<Props> = ({
 
   return (
     <footer className="footer">
-      <span className="todo-count" data-cy="todosCounter">
-        {`${todos.length - amountCompletedTodos} items left`}
-      </span>
+      <p className="footer__todoCount" data-cy="todosCounter">
+        <strong>{todos.length - amountCompletedTodos}</strong>
+        {' items left'}
+      </p>
 
       <ul className="filters" data-cy="todosFilter">
         {filterLinks.map(({ title, to }) => (
-          <li key={title}>
+          <li key={title} className="filters__list">
             <NavLink
               to={to}
               className={({ isActive }) => classNames(
-                { selected: isActive },
+                'filters__link',
+                { 'filters__link--selected': isActive },
               )}
               replace
             >
@@ -59,7 +61,7 @@ export const Footer: FC<Props> = ({
       {todos.some(todo => todo.completed === true) && (
         <button
           type="button"
-          className="clear-completed"
+          className="button button--clearCompleted"
           onClick={hendlerRemoveAll}
         >
           Clear completed

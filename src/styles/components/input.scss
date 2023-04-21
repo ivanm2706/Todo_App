@@ -1,0 +1,80 @@
+.input {
+  &::-webkit-input-placeholder {
+    font-style: italic;
+    font-weight: 300;
+    color: #e6e6e6;
+  }
+
+  &::-moz-placeholder {
+    font-style: italic;
+    font-weight: 300;
+    color: #e6e6e6;
+  }
+
+  &::-ms-input-placeholder {
+    font-style: italic;
+    font-weight: 300;
+    color: #e6e6e6;
+  }
+
+  &::placeholder {
+    font-style: italic;
+    font-weight: 300;
+    color: #e6e6e6;
+  }
+
+  &--newTodo {
+    @extend %edit;
+    padding: 16px 16px 16px 60px;
+    border: none;
+    background: rgba(0, 0, 0, 0.01);
+    box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
+    outline: none;
+  }
+
+  &--edit {
+    @extend %edit;
+    display: none;
+    padding: 6px;
+    border: 1px solid #999;
+    box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  &--toggle {
+    text-align: center;
+    width: 40px;
+    height: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    border: none;
+    -webkit-appearance: none;
+    appearance: none;
+    opacity: 0;
+    cursor: pointer;
+
+    @media screen and (-webkit-min-device-pixel-ratio:0) {
+      height: 40px;
+      background: none;
+    }
+  }
+
+  &--toggleAll {
+    width: 1px;
+    height: 1px;
+    border: none;
+    opacity: 0;
+    position: absolute;
+    right: 100%;
+    bottom: 100%;
+
+    // &:checked + label:before {
+    //   color: #737373;
+    // }
+
+    @media screen and (-webkit-min-device-pixel-ratio:0) {
+      background: none;
+    }
+  }
+}

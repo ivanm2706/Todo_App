@@ -65,10 +65,10 @@ export const TodoInfo: FC<Props> = ({
 
   return (
     <>
-      <div className="view">
+      <div className="todoList__view">
         <input
           type="checkbox"
-          className="toggle"
+          className="input input--toggle todoList__toggle"
           checked={todo.completed}
           onClick={(e) => {
             e.stopPropagation();
@@ -76,6 +76,7 @@ export const TodoInfo: FC<Props> = ({
           }}
         />
         <p
+          className="todoList__toggleLabel"
           onDoubleClick={() => hendlerDoubleClick(todo.id)}
         >
           {todo.title}
@@ -83,7 +84,7 @@ export const TodoInfo: FC<Props> = ({
         {/* eslint-disable jsx-a11y/control-has-associated-label */}
         <button
           type="button"
-          className="destroy"
+          className="button button--destroy todoList__destroy"
           data-cy="deleteTodo"
           onClick={() => hendlerRemove(todo.id)}
         />
@@ -92,7 +93,7 @@ export const TodoInfo: FC<Props> = ({
         ref={inputNewTitle}
         type="text"
         id="toggle-view"
-        className="edit"
+        className="input input--edit todoList__edit"
         value={newTitle}
         onChange={hendlerNewTitle}
         onKeyUp={hendlerKeyUp}

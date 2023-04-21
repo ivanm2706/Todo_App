@@ -31,29 +31,31 @@ export const TodoList: FC<Props> = ({
   };
 
   return (
-    <section className="main">
+    <section className="mainTodos">
       <input
         type="checkbox"
         id="toggle-all"
-        className="toggle-all"
+        className="input input--toggleAll mainTodos__toggleAll"
         data-cy="toggleAll"
         checked={isCompletedTodo}
         onClick={hendlerTogglerAll}
       />
       {/* eslint-disable-next-line */}
       <label
+        className="mainTodos__label"
         htmlFor="toggle-all"
       >
         Mark all as complete
       </label>
 
-      <ul className="todo-list" data-cy="todosList">
+      <ul className="todo-list * todoList" data-cy="todosList">
         {todos.map(todo => (
           <li
             key={todo.id}
             className={classNames(
-              { completed: todo.completed },
-              { editing: changeTitle === todo.id },
+              'todoList__item',
+              { 'todoList__item--completed': todo.completed },
+              { 'todoList__item--editing': changeTitle === todo.id },
             )}
           >
             <TodoInfo
